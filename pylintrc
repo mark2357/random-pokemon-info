@@ -1,0 +1,4 @@
+[Master]
+init-hook='import sys; sys.path.append("F:\PythonProjects\RandomPokemonInfo")'
+[FORMAT]
+max-line-length=200
