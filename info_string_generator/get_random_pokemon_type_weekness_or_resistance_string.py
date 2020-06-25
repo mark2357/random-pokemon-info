@@ -9,7 +9,7 @@ from endpoint_helpers.get_type_data import get_duel_type_weeknesses_and_resistan
 def get_random_pokemon_type_weekness_or_resistance_string():
     '''returns string stating random pokemon name and one of it's weeknesses resistances or immunities'''
     data = get_random_pokemon_data()
-    name = data['name']
+    name = data['name'].replace('-', ' ')
     types = data['types']
 
     damage_multipliers = None

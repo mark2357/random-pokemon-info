@@ -6,7 +6,7 @@ def get_random_pokemon_lowest_stat_string():
     '''returns string stating random pokemon name and it's lowest stat'''
 
     data = get_random_pokemon_data()
-    name = data['name']
+    name = data['name'].replace('-', ' ')
 
     lowest_stat_value = 256
     lowest_stat_name = ''

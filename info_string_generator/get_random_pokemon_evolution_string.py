@@ -35,7 +35,7 @@ def add_evolution_chain_name_to_array(array, evolution_data):
     '''recursively adds pokemon names to array'''
 
     pokemon_data = {}
-    pokemon_data['pokemon_name'] = evolution_data['species']['name']
+    pokemon_data['pokemon_name'] = evolution_data['species']['name'].replace('-', ' ')
     possible_evolution_count = len(evolution_data['evolves_to'])
     if possible_evolution_count > 0:
         random_evolution_index = random.randrange(0, possible_evolution_count)
