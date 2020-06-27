@@ -2,7 +2,7 @@
 
 import json
 
-from generic.fetch_data_from_api import fetch_data_from_api
+from helpers.fetch_data_from_api import fetch_data_from_api
 
 def get_type_data(type_name):
     '''returns type data from the given type'''

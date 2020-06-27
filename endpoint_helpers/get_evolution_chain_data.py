@@ -3,7 +3,7 @@
 import json
 import random
 
-from generic.fetch_data_from_api import fetch_data_from_api
+from helpers.fetch_data_from_api import fetch_data_from_api
 
 def get_pokemon_evolution_chain_data(number):
     '''returns the data for the given evolution chain (works for 1 - 427)'''
