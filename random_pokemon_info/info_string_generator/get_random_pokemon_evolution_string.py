@@ -2,7 +2,7 @@
 
 import random
 
-from endpoint_helpers.get_evolution_chain_data import get_random_evolution_chain_data
+from ..endpoint_helpers.get_evolution_chain_data import get_random_evolution_chain_data
 
 def get_random_pokemon_evolution_string():
     '''returns string stating random pokemon and if it evolves from or to another pokemon'''

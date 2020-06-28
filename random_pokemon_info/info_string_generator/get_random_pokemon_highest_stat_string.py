@@ -1,6 +1,6 @@
 '''contains function that returns string stating random pokemon name and it's highest stat'''
 
-from endpoint_helpers.get_pokemon_data import get_random_pokemon_data
+from ..endpoint_helpers.get_pokemon_data import get_random_pokemon_data
 
 def get_random_pokemon_highest_stat_string():
     '''returns string stating random pokemon name and it's highest stat'''

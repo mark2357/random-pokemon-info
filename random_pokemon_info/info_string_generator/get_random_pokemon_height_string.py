@@ -1,6 +1,6 @@
 '''contains function that returns string starting random pokemon name '''
 
-from endpoint_helpers.get_pokemon_data import get_random_pokemon_data
+from ..endpoint_helpers.get_pokemon_data import get_random_pokemon_data
 
 def get_random_pokemon_height_string():
     '''returns string stating random pokemon name and it's height'''

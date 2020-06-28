@@ -32,5 +32,5 @@ This will also take a large amount of space on the disk (several hundred megabyt
 the script can be be run by using the following command
 
 ```
-python ./get_random_info.py
+python ./test.py
 ```

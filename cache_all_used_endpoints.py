@@ -5,6 +5,9 @@ import datetime
 import requests
 import requests_cache
 
+requests_cache.install_cache()
+
+
 endpoints = [
     {'url': 'https://pokeapi.co/api/v2/pokemon/', 'range-min': 1, 'range-max': 808},
     {'url': 'https://pokeapi.co/api/v2/evolution-chain/', 'range-min': 1, 'range-max': 428},
@@ -25,6 +28,8 @@ for endpoint in endpoints:
     for x in range(endpoint['range-min'], endpoint['range-max']):
         full_url = f"{endpoint['url']}{x}"
         response = requests.get(full_url)
+        if response.status_code is not 200:
+            print(f"Error status code is not 200 it's {response.status_code}")
         if response.from_cache:
             print(f'url: {full_url} has already been cached')
         else:

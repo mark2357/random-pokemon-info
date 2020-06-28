@@ -2,9 +2,9 @@
 
 import random
 
-from endpoint_helpers.get_pokemon_data import get_random_pokemon_data
-from endpoint_helpers.get_type_data import get_type_weeknesses_and_resistances
-from endpoint_helpers.get_type_data import get_duel_type_weeknesses_and_resistances
+from ..endpoint_helpers.get_pokemon_data import get_random_pokemon_data
+from ..endpoint_helpers.get_type_data import get_type_weeknesses_and_resistances
+from ..endpoint_helpers.get_type_data import get_duel_type_weeknesses_and_resistances
 
 def get_random_pokemon_type_weekness_or_resistance_string():
     '''returns string stating random pokemon name and one of it's weeknesses resistances or immunities'''

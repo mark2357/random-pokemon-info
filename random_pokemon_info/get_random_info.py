@@ -2,7 +2,7 @@
 
 import random
 
-import info_string_generator
+from . import info_string_generator
 
 def get_random_info():
     '''returns string with random pokemon info'''

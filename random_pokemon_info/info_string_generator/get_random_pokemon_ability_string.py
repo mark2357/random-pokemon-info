@@ -2,7 +2,7 @@
 
 import random
 
-from endpoint_helpers.get_pokemon_data import get_random_pokemon_data
+from ..endpoint_helpers.get_pokemon_data import get_random_pokemon_data
 
 def get_random_pokemon_ability_string():
     '''returns string stating random pokemon name and one of it's possible abilities'''

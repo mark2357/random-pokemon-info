@@ -3,7 +3,7 @@
 import json
 import random
 
-from helpers.fetch_data_from_api import fetch_data_from_api
+from ..helpers.fetch_data_from_api import fetch_data_from_api
 
 def get_pokemon_species_data(number):
     '''returns the species data for the given pokemon with the given national dex number (works for 1 - 807)'''
