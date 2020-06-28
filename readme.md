@@ -1,7 +1,7 @@
 # Random Pokemon Info
-prints out random info about pokemon to the console
-has thousands of different possible options
-this uses the https://pokeapi.co/ API
+return a string stating random information about pokemon
+has thousands of different possible return values
+this uses the https://pokeapi.co/ API for data
 
 
 ## installation
@@ -30,11 +30,12 @@ this can be run by running the following from within a script
 ```
 import random_pokemon_info
 
-random_pokemon_info.pre_cache_all_used_endpoints()
+random_pokemon_info.pre_cache_all_used_endpoints(3)
 ```
 
 WARNING this will take a long time to run as it's designed not send a continuous stream of requests to the API
 This will also take a large amount of space on the disk (several hundred megabytes)
+the web requests will be cached in a file called `cache.sqlite` next to the python script that is run
 
 
 ## available functions
