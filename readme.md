@@ -3,6 +3,13 @@ prints out random info about pokemon to the console
 has thousands of different possible options
 this uses the https://pokeapi.co/ API
 
+
+## installation
+open the project in a terminal and install with pip
+```
+pip install .
+```
+
 ## dependencies
 python
 

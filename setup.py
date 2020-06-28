@@ -6,5 +6,5 @@ setup(name='random_pokemon_info',
       description='module that contains functions that return random strings about pokemon',
       author='Mark Lenton',
       license='MIT',
-      packages=['random_pokemon_info'],
+      packages=setuptools.find_packages(),
       zip_safe=False)
