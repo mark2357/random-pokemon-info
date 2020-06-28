@@ -11,8 +11,8 @@ def get_type_data(type_name):
     return data
 
 
-def get_type_weeknesses_and_resistances(type_name):
-    '''returns weekness, resistane and immunity damage multipliers for the given type'''
+def get_type_weaknesses_and_resistances(type_name):
+    '''returns weakness, resistane and immunity damage multipliers for the given type'''
 
     damage_relations = get_type_data(type_name)['damage_relations']
 
@@ -23,8 +23,8 @@ def get_type_weeknesses_and_resistances(type_name):
     return damage_multipliers
 
 
-def get_duel_type_weeknesses_and_resistances(type_name_1, type_name_2):
-    '''returns weekness, resistane and immunity damage multipliers for the given 2 types'''
+def get_duel_type_weaknesses_and_resistances(type_name_1, type_name_2):
+    '''returns weakness, resistane and immunity damage multipliers for the given 2 types'''
 
     damage_relations_1 = get_type_data(type_name_1)['damage_relations']
     damage_relations_2 = get_type_data(type_name_2)['damage_relations']
@@ -50,7 +50,7 @@ def get_duel_type_weeknesses_and_resistances(type_name_1, type_name_2):
 def add_type_to_damage_multipliers(damage_multipliers, damage_relations):
     '''uses the type relations and adds or recalculates the new damage multiplier'''
 
-    # if the type has weeknesses
+    # if the type has weaknesses
     if 'double_damage_from' in damage_relations:
 
         # for each type

@@ -15,7 +15,7 @@ def get_random_info():
         {'weight': 1, 'func': info_string_generator.get_random_pokemon_highest_stat_string},
         {'weight': 1, 'func': info_string_generator.get_random_pokemon_lowest_stat_string},
         {'weight': 1, 'func': info_string_generator.get_random_pokemon_type_string},
-        {'weight': 1, 'func': info_string_generator.get_random_pokemon_type_weekness_or_resistance_string},
+        {'weight': 1, 'func': info_string_generator.get_random_pokemon_type_weakness_or_resistance_string},
         {'weight': 1, 'func': info_string_generator.get_random_pokemon_weight_string},
     ]
 
