@@ -7,10 +7,12 @@ import json
 import requests
 import requests_cache
 
-requests_cache.install_cache()
 
 def pre_cache_all_used_endpoints(wait_time_between_requests):
     '''pre caches endpoints used by module'''
+
+    # installs cache so it uses cached data
+    requests_cache.install_cache()
 
     # these endpoints return lists of endpoints to cache
     # if name based is set to true then url uses the name of the resource instead of it's id
@@ -65,3 +67,7 @@ def pre_cache_all_used_endpoints(wait_time_between_requests):
             time.sleep(wait_time_between_requests)
 
     print(f'after caching cached {len(requests_cache.get_cache().responses)} endpoints')
+
+
+    # uninstalls cache incase module is used in application using requests that doesn't need caching
+    requests_cache.uninstall_cache()
