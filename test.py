@@ -37,3 +37,6 @@ print(random_pokemon_info.get_random_pokemon_type_weakness_or_resistance_info())
 
 print('testing get_random_pokemon_weight_info')
 print(random_pokemon_info.get_random_pokemon_weight_info())
+
+print('---')
+print('finished testing')

@@ -1,5 +1,6 @@
 '''contains function to pre caches used endpoints'''
 
+import os
 import time
 import datetime
 import json
@@ -12,13 +13,16 @@ def pre_cache_all_used_endpoints(wait_time_between_requests):
     '''pre caches endpoints used by module'''
 
     # these endpoints return lists of endpoints to cache
+    # if name based is set to true then url uses the name of the resource instead of it's id
+    # e.g. uses /pokemon/bulbasaur/ instead of /pokemon/1/
+    # name based is used for types as they are retrieved by name not id
     endpoint_list_endpoints = [
-        'https://pokeapi.co/api/v2/pokemon/?limit=1000',
-        'https://pokeapi.co/api/v2/evolution-chain/?limit=500',
-        'https://pokeapi.co/api/v2/pokemon-species/?limit=1000',
-        'https://pokeapi.co/api/v2/type/'
-
+        {'url':'https://pokeapi.co/api/v2/pokemon/?limit=1000', 'name_based': False},
+        {'url':'https://pokeapi.co/api/v2/evolution-chain/?limit=500', 'name_based': False},
+        {'url':'https://pokeapi.co/api/v2/pokemon-species/?limit=1000', 'name_based': False},
+        {'url':'https://pokeapi.co/api/v2/type/', 'name_based': True},
     ]
+
 
     print(f'before starting caching cached {len(requests_cache.get_cache().responses)} endpoints')
 
@@ -28,14 +32,18 @@ def pre_cache_all_used_endpoints(wait_time_between_requests):
 
     # adds each endpoint that needs to be cached from each endpoint list
     for endpoint_list_url in endpoint_list_endpoints:
-        response = requests.get(endpoint_list_url)
+        response = requests.get(endpoint_list_url['url'])
         if response.status_code != 200:
             print(f"Error status code is not 200 it's {response.status_code}")
             continue
 
         data = json.loads(response.text)
         for item in data['results']:
-            url_cache_list.append(item['url'])
+            if endpoint_list_url['name_based'] == False:
+                url_cache_list.append(item['url'])
+            else:
+                url = os.path.dirname(os.path.dirname(item['url'])) + '/' + item['name'] + '/'
+                url_cache_list.append(url)
 
         time.sleep(wait_time_between_requests)
 
