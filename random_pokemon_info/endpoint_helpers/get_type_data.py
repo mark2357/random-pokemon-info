@@ -7,7 +7,15 @@ from ..helpers.fetch_data_from_api import fetch_data_from_api
 def get_type_data(type_name):
     '''returns type data from the given type'''
 
-    data = json.loads(fetch_data_from_api(f'https://pokeapi.co/api/v2/type/{type_name}'))
+    data = None
+    url = f'https://pokeapi.co/api/v2/type/{type_name}'
+    try:
+        data = json.loads(fetch_data_from_api(url))
+
+    except json.decoder.JSONDecodeError:
+        print(f'ERROR decoding json from {url} return data was {data}')
+        return None
+
     return data
 
 

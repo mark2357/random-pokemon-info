@@ -9,7 +9,15 @@ from ..helpers.get_request_id_from_url import get_request_id_from_url
 def get_pokemon_data(number):
     '''returns the data for the given pokemon with the given national dex number (works for 1 - 807)'''
 
-    data = json.loads(fetch_data_from_api(f'https://pokeapi.co/api/v2/pokemon/{str(number)}'))
+    data = None
+    url = f'https://pokeapi.co/api/v2/pokemon/{str(number)}'
+    try:
+        data = json.loads(fetch_data_from_api(url))
+
+    except json.decoder.JSONDecodeError:
+        print(f'ERROR decoding json from {url} return data was {data}')
+        return None
+
     return data
 
 def get_random_pokemon_data():
@@ -17,14 +25,29 @@ def get_random_pokemon_data():
 
     url_list = get_pokemon_url_list(False)
     num = random.randrange(0, len(url_list))
-    data = json.loads(fetch_data_from_api(url_list[num]))
+
+    data = None
+    try:
+        data = json.loads(fetch_data_from_api(url_list[num]))
+
+    except json.decoder.JSONDecodeError:
+        print(f'ERROR decoding json from {url_list[num]} return data was {data}')
+        return None
+
     return data
 
 
 def get_pokemon_url_list(get_forms):
     '''returns an array with the list containing all the urls for evolution chains'''
 
-    data = json.loads(fetch_data_from_api('https://pokeapi.co/api/v2/pokemon/?limit=1000'))
+    data = None
+    url = 'https://pokeapi.co/api/v2/pokemon/?limit=1000'
+    try:
+        data = json.loads(fetch_data_from_api(url))
+
+    except json.decoder.JSONDecodeError:
+        print(f'ERROR decoding json from {url} return data was {data}')
+        return None
 
 
     url_cache_list = []

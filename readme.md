@@ -1,5 +1,5 @@
 # Random Pokemon Info
-return a string stating random information about pokemon
+a python library that return a string stating random information about pokemon
 has thousands of different possible return values
 this uses the https://pokeapi.co/ API for data
 
@@ -11,21 +11,23 @@ pip install .
 ```
 
 ## dependencies
-python
+python 3.x
 
 requests
 requests_cache
+
+python can be downloaded from https://www.python.org/downloads/
 
 both requests and requests_cache can be installed using pip with the following commands
 ```
 pip install requests
 pip install requests_cache
 ```
-as this library uses the https://pokeapi.co/ so unless the cache script has been fully run this library requires an internet connection
+as this library uses the https://pokeapi.co/ so unless the cache script has been fully run this library requires an internet connection unless all endpoints have been pre-cached
 
 
 ## pre-caching
-you can pre-cache the endpoint data by running the 
+you can pre-cache the endpoint data by running the following 
 this can be run by running the following from within a script
 ```
 import random_pokemon_info
